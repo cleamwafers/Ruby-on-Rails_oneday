@@ -7,6 +7,8 @@ add-ons available to all users:
 * `/Library/Python`
 * `/Library/Perl`
 
+export PATH="$HOME/.rbenv/shims:$PATH"
+
 You need sudo to install to these like so: `sudo gem install`,
 `sudo easy_install` or `sudo cpan -i`.
 

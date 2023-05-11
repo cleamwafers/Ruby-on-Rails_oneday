@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>アプリケーションを作成しよう</title>
+        <meta name="description" content="アプリケーションを作成しよう">
+    </head>
+    <body>
+        <h4>SESSIOM/02〜流れ〜</h4>
+            <ol>
+                <li>リクエストを受けるコントローラー作成。</li>
+                <li>動作を定義するアクションを記述する。</li>
+                <li>リクエストをコントローラーに振り分ける定義をするルーティング情報を追加する。</li>
+                <li>最後に実際にブラウザ上からアクセスして定義した処理が動いて居ることを確認する。</li>
+            </ol>
+        <h4>コントローラーの役割</h4>
+            <p><font color="red">コントローラー(Controller)</font>：ユーザーのリクエストを受け取り、<br>
+                モデル(Model)やビュー(View)へその情報を渡す、橋渡し役</p>
+            <p>例えば、ユーザーが『/users』というURLにアクセスしたら、そのリクエストを最初に受けるのが<font color="red">コントローラー</font></p>
+            <p>Usersコントローラーで受け付けたリクエストを元に、モデルから受け取ったデータを対応するビューに渡して画面を生成する。</p>
+        
+        <h4>ジェネレーターコマンドでコントローラーを作成する</h4>
+            <p><font color="red">ジェネレーター</font>：アプリ開発に必要なファイルを自動生成してくれるコマンド。</p>
+            <p>ジェネレーターコマンド＝rails generateコマンドとして提供されている。generateを略して『rails g』でも同様に実行できる。</p>
+            <p>コマンドの引数に『何を自動生成(generate)するのか』を指定して実行する。<br>
+                rails g controller[コントローラー名][アクション名]でコントローラー作成を実行。
+            </p>
+        
+        <h4>作成されたもの</h4>
+            <p>ビューフォルダ：app/views/usersの中にアクションに対応するビューファイルを配置していく。<br>
+                注目はコントローラー名の『Users』とフォルダ名の『users』が一致するようにフォルダが追加されている。
+            </p>
+            <p>テストコード:<font color="red">テストコード</font>実装した動作が思惑通りに正しく動いて居るのかを自動化するもの。<br>
+                test/controllers/users_controller_test.rb
+            </p>
+            <p>ヘルパーメソッド:ビューやコントローラーから呼び出す共通処理をまとめたもの。<br>
+                app/helpers/users_helper.rbとなっており、ファイルの先頭がコントローラー名同様の『users』となっている。
+            </p>
+            <p><font color="red">アセット</font>：Webアプリを構成するJavaScriptやCSSなどの総称。※なぜか現時点で作成されない(2023/5/11)。<br>
+                app/assets/javascripts/users.coffee=JavaScript(CoffeeScript)<br>
+                app/assets/stylesheets/users.scss=CSS(SCSS)
+            </p>
+            <p>CoffeeScript/SCSS:<font color="red">CoffeeScript</font>はJavaScriptのトー度を生成するためのプログラミング言語の一つ。<br>
+                JavaScriptよりもRubyに近い記述ができることが特徴。Railsに標準採用されている。<br>
+                <font color="red">SCSS</font>はよりプログラミング的にスタイルシートを記述するための言語の一つ。CSSに変換できる。Railsに標準採用されている。
+            </p>
+    </body>
+</html>
